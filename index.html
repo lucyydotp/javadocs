@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lucy's Javadocs</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            background-color: #2b2b2b;
+            color: white;
+            font-family: "Work Sans", sans-serif;
+            font-size: 24px;
+        }
+
+        .title {
+            margin: 0;
+            background-color: #383838;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .header {
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        #listContainer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        #listContainer > div {
+            width: 300px;
+            background-color: #383838;
+            border-radius: 5px;
+            margin: 20px 10px;
+        }
+
+        a {
+            color: #99b8ff;
+        }
+    </style>
+</head>
+<body>
+<div class="title">Lucy's Javadocs</div>
+<div id="listContainer">
+    <div class="header" style="padding-bottom: 20px">Loading...</div>
+</div>
+</body>
+
+<script>
+    const API_URL = "https://api.github.com/repos/lucyy-mc/javadocs/contents";
+
+    async function getVersions(url) {
+        let versions = await fetch(`${API_URL}/${url}`);
+        let json = await versions.json();
+        let output = "";
+        for (let obj of json.reverse()) output += `<li><a href="/${obj.path}">${obj.name}</a></li>`
+        return output;
+    }
+
+    async function load() {
+        let result = await fetch(API_URL);
+        let json = await result.json();
+        let output = "";
+
+        for (let obj of json) {
+            if (obj.type === "dir") output +=
+                `<div>
+        <div class="header">${obj.name}</div>
+        <ul>
+            ${await getVersions(obj.name)}
+        </ul>
+    </div>`
+        }
+        document.getElementById("listContainer").innerHTML = output;
+    }
+
+    load();
+</script>
+</html>
