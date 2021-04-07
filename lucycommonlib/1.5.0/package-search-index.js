@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"me.lucyy.common"},{"l":"me.lucyy.common.command"},{"l":"me.lucyy.common.format"},{"l":"me.lucyy.common.format.blocked"},{"l":"me.lucyy.common.format.pattern"},{"l":"me.lucyy.common.update"},{"l":"me.lucyy.common.util"}];updateSearchResults();
