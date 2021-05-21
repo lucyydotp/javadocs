@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"me.lucyy.squirtgun.command.argument"},{"l":"me.lucyy.squirtgun.command.context"},{"l":"me.lucyy.squirtgun.command.node"}];updateSearchResults();

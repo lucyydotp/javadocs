@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"me.lucyy.squirtgun.bukkit","l":"BukkitListenerAdapter"},{"p":"me.lucyy.squirtgun.bukkit","l":"BukkitNodeExecutor"},{"p":"me.lucyy.squirtgun.bukkit","l":"BukkitPlatform"},{"p":"me.lucyy.squirtgun.bukkit","l":"BukkitPlayer"},{"p":"me.lucyy.squirtgun.bukkit","l":"BukkitSenderWrapper"}];updateSearchResults();
